@@ -8,7 +8,6 @@
     <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
     <title>Todo-App</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-    <script src="js/script.js"></script>
 </head>
 
 
@@ -21,7 +20,7 @@
         </div>
 
         <div class="item2">
-            <button class="tablinks" onclick="openTab(event, 'todo')" id="defaultOpen">Todo</button>
+            <button class="tablinks" onclick="openTab(event, 'todo')">Todo</button>
             <button class="tablinks" onclick="openTab(event, 'user')">User</button>
             <button class="tablinks" onclick="openTab(event, 'login')">Login</button>
         </div>
@@ -31,15 +30,42 @@
                 <div class="card">
                     <div class="todo-header">
                         <h1>To Do List</h1>
-                        <form class="inline">
-                            <input class="input" type="text" placeholder="Title...">
-                            <span><button class="addBtn">+</button></span>
-                        </form>
+                        <div>
+                            <input id="input-text" class="input" type="text" placeholder="Todo..." onkeypress="onEnter(event)">
+                            <button onclick="addTask()" class="addBtn">+</button>
+                        </div>
                     </div>
-                    <ul class="todos">
-                        <li>rock</li>
-                        <li>do stuffs</li>
-                    </ul>
+                    <ul id="todos" class="todos">
+                        <li>
+                            <div class="li">
+                                <span class="text">
+                                    My first task 1
+                                </span> 
+                                <span class="buttons">
+                                    <span class="button" onclick="editTask(event)">
+                                        <img src="images/edit.png" />
+                                    </span>
+                                    <span class="button" onclick="deleteTask(event)">
+                                        <img src="images/delete.png"/>
+                                    </span> 
+                                </span> 
+                            </div>
+                        </li>
+                        <li>
+                            <div class="li">
+                                <span class="text">
+                                    My first task 2
+                                </span>
+                                <span class="buttons">
+                                    <span class="button" onclick="editTask(event)">                                        <img src="images/edit.png" />
+                                    </span>
+                                    <span class="button" onclick="deleteTask(event)">
+                                        <img src="images/delete.png"/>
+                                    </span> 
+                                </span> 
+                            </div>
+                        </li>
+                        </ul>
                 </div>
             </div>
 
@@ -76,6 +102,9 @@
             <button class="section">Contact Us</button>
         </div>
     </div>
+
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>

@@ -13,65 +13,64 @@
 
 
 <body>
-    <div class="app">
-        <div class="header">
+    <div class="grid-container">
+
+        <div class="item1">
             <img src="images/favicon.png" alt="logo">
             <h1>Todo-App</h1>
         </div>
 
-        <div class="container">
-            <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'todo')" id="defaultOpen">Todo</button>
-                <button class="tablinks" onclick="openTab(event, 'user')">User</button>
-                <button class="tablinks" onclick="openTab(event, 'login')">Login</button>
-            </div>
-            <div class="content">
-                <div id="todo" class="tabcontent">
-                    <div class="card">
-                        <div class="todo-header">
-                            <h1>To Do List</h1>
-                            <form class="inline">
-                                <input class="input" type="text" placeholder="Title...">
-                                <span><button class="addBtn">+</button></span>
-                            </form>
-                        </div>
-                        <ul class="todos">
-                            <li>rock</li>
-                            <li>do stuffs</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div id="user" class="tabcontent">
-                    <div class="card">
-                        <div class="profile-pic">
-                            <img src="images/avator.jpg" alt="cool" />
-                        </div>
-                        <div>
-                            <h2>Venom</h2>
-                            <h3><a href="mailto:venom@affinionds.com">venom@affinionds.com</p>
-                            </h3>
-                            <h3><a href="tel:8605469259">+91 xxx-xxx-xxxx</a></h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="login" class="tabcontent">
-                    <div class="card">
-                        <form method="POST">
-                            <h1>Todo App Login</h1>
-                            <input class="input" type="text" name="username" required placeholder="Username" />
-                            <input class="input" type="password" name="password" required placeholder="Password" />
-                            <br />
-                            <input class="input submit-btn" type="submit" name="Login" value="Login" />
-                        </form>
-                    </div>
-                </div>
-
-            </div>
+        <div class="item2">
+            <button class="tablinks" onclick="openTab(event, 'todo')" id="defaultOpen">Todo</button>
+            <button class="tablinks" onclick="openTab(event, 'user')">User</button>
+            <button class="tablinks" onclick="openTab(event, 'login')">Login</button>
         </div>
 
-        <div class="footer">
+        <div class="item3">
+            <div id="todo" class="tabcontent">
+                <div class="card">
+                    <div class="todo-header">
+                        <h1>To Do List</h1>
+                        <form class="inline">
+                            <input class="input" type="text" placeholder="Title...">
+                            <span><button class="addBtn">+</button></span>
+                        </form>
+                    </div>
+                    <ul class="todos">
+                        <li>rock</li>
+                        <li>do stuffs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="user" class="tabcontent">
+                <div class="card">
+                    <div class="profile-pic">
+                        <img src="images/avator.jpg" alt="cool" />
+                    </div>
+                    <div>
+                        <h2>Venom</h2>
+                        <h3><a href="mailto:venom@affinionds.com">venom@affinionds.com</p>
+                        </h3>
+                        <h3><a href="tel:8605469259">+91 xxx-xxx-xxxx</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="login" class="tabcontent">
+                <div class="card">
+                    <form method="POST">
+                        <h1>Todo App Login</h1>
+                        <input class="input" type="text" name="username" required placeholder="Username" />
+                        <input class="input" type="password" name="password" required placeholder="Password" />
+                        <br />
+                        <input class="input submit-btn" type="submit" name="Login" value="Login" />
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="item4">
             <button class="section">Home</button>
             <button class="section">About</button>
             <button class="section">Contact Us</button>

@@ -1,7 +1,7 @@
 function openTab(evt, tabName) {
     console.log(evt);
     // Declare all variables
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
   
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -26,27 +26,48 @@ var deleteTask = (event) => {
   event.target.parentElement.parentElement.parentElement.parentElement.parentElement.removeChild(event.target.parentElement.parentElement.parentElement.parentElement);
 }
 
-var addTask = () => {
+const onEdit = (event) => {
+  if(event.charCode == 13 && event.target.value != "") 
+  {
+    event.target.outerHTML = "<span class='text'>"+ event.target.value + "</span>";
+    document.querySelectorAll(".deleteButton").forEach((element) => element.addEventListener("click", deleteTask)); 
+    document.querySelectorAll(".editButton").forEach((element) => element.addEventListener("click", editTask)); 
+  }  
+}
+
+const editTask = (event) => {
+  event.target.parentNode.parentNode.previousSibling.parentNode.firstElementChild.outerHTML = "<input id='update-input' type='text' placeholder='' onkeypress='onEdit(event)'></input>";
+}
+
+const addTask = () => {
+  
   if(document.getElementById("input-text").value != "") {
     document.getElementById("todos").innerHTML += "<li>"+
-    "<div class='li'>"+
-        "<span class='text'>"+
-        document.getElementById("input-text").value +
-        "</span> "+
-        "<span class='buttons'>"+
-            "<span class='button' onclick='editTask(event)'>"+
-                "<img src='images/edit.png' />"+
-            "</span>"+
-            "<span class='button' onclick='deleteTask(event)'>"+
-                "<img src='images/delete.png'/>"+
-            "</span>"+ 
-        "</span>"+ 
-    "</div>"+
-  "</li>";
+      "<div class='li'>"+
+          "<span class='text'>"+
+          document.getElementById("input-text").value +
+          "</span> "+
+          "<span class='buttons'>"+
+              "<span class='editButton button'>"+
+                  "<img src='images/edit.png' />"+
+              "</span>"+
+              "<span class='deleteButton button'>"+
+                  "<img src='images/delete.png'/>"+
+              "</span>"+ 
+          "</span>"+ 
+      "</div>"+
+    "</li>";
+    
+    document.querySelectorAll(".deleteButton").forEach((element) => element.addEventListener("click", deleteTask)); 
+    document.querySelectorAll(".editButton").forEach((element) => element.addEventListener("click", editTask)); 
+    document.getElementById("input-text").value = "";
   }
 }
 
-var onEnter = (event) => {
+const onEnter = (event) => {
   if(event.charCode == 13) 
     addTask();
 }
+
+document.querySelectorAll(".deleteButton").forEach((element) => element.addEventListener("click", deleteTask)); 
+document.querySelectorAll(".editButton").forEach((element) => element.addEventListener("click", editTask));

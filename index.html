@@ -30,27 +30,28 @@
                     <div class="todo-header">
                         <h1>To Do List</h1>
                         <div>
-                            <input id="input-text" class="input" type="text" placeholder="Todo..." onkeypress="onEnter(event)">
+                            <input id="input-text" onkeyup="onSearch(event)" class="input" type="text"
+                                placeholder="Todo..." onkeypress="onEnter(event)">
                             <button onclick="addTask()" class="addBtn">+</button>
                         </div>
                     </div>
                     <ul id="todos" class="todos">
-                        <li>
+                        <li class="lis">
                             <div class="li">
                                 <span class="text">
                                     My first task 1
-                                </span> 
+                                </span>
                                 <span class="buttons">
                                     <span class="editButton button">
                                         <img src="images/edit.png" />
                                     </span>
                                     <span class="deleteButton button">
-                                        <img src="images/delete.png"/>
-                                    </span> 
-                                </span> 
+                                        <img src="images/delete.png" />
+                                    </span>
+                                </span>
                             </div>
                         </li>
-                        </ul>
+                    </ul>
                 </div>
             </div>
 
